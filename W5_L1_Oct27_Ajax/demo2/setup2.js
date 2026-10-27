@@ -24,9 +24,5 @@ var base_url = 'https://pokeapi.co/api/v2/';
 
 //Wait for the DOM content to load
 document.addEventListener('DOMContentLoaded', () => {
-    //Add the 25 pokemon
-    // for(var i = 1; i <= 25; i++) {
-    //     getPokemon(i);
-    // }
     getPokemon(1);
 });

@@ -19,9 +19,11 @@ function getPokemon(pokedexNumber) {
 	fetch(base_url + 'pokemon/' + pokedexNumber).then((response) => {
 		response.json().then((pokemon_json) => {
 			addPokemonToList(pokemon_json.id, pokemon_json.name, pokemon_json.sprites.front_default);
-			if(pokemon_json.id < 25) {
+			
+			// (solution 2) uncomment & remove soultion 1 for loop
+			/*if(pokemon_json.id < 25) {
 				getPokemon(pokemon_json.id + 1);
-			}
+			}*/
 		});
 	});
 }
@@ -31,5 +33,12 @@ var base_url = 'https://pokeapi.co/api/v2/';
 //Wait for the DOM content to load
 document.addEventListener('DOMContentLoaded', () => {
     //Add the 25 pokemon
-	getPokemon(1);
+
+	// (solution 1) returns in random order
+	for(var i = 1; i <= 25; i++) {
+		getPokemon(i);
+    }
+
+	// (solution 2) using recursion, adds in order 
+	// getPokemon(1);
 });
