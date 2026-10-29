@@ -1,0 +1,10 @@
+<ul>
+    @for(day of days; track day){
+        <li>
+            {{day}}
+            @if(day == today) {
+                <strong>Today!</strong>
+            }
+        </li>
+    }
+</ul>
